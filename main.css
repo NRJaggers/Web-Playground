@@ -4,20 +4,15 @@ body {
   min-height: 100vh;
 }
 
-.play-structure-img {
-  width: 80px;
-  height: auto;
-  margin: 0;
-}
-
 /* Individual image size overrides and grid-area assignments */
+
 .bars {
-  width: 80px;
+  width: 100px;
   grid-area: bars;
 }
 
 .basketball-court {
-  width: 200px;
+  width: 300px;
   grid-area: basketball;
 }
 
@@ -57,7 +52,7 @@ body {
 }
 
 .fountain {
-  width: 80px;
+  width: 120px;
   grid-area: fountain;
 }
 
@@ -67,7 +62,7 @@ body {
 }
 
 .horse {
-  width: 80px;
+  width: 90px;
   grid-area: horse;
 }
 
@@ -82,7 +77,7 @@ body {
 }
 
 .sandbox {
-  width: 80px;
+  width: 150px;
   grid-area: sandbox;
 }
 
@@ -92,18 +87,53 @@ body {
 }
 
 .slide {
-  width: 80px;
+  width: 180px;
   grid-area: slide;
 }
 
 .teeter_toter {
-  width: 80px;
+  width: 120px;
   grid-area: teeter_toter;
 }
 
-.tree1_1 {
+.tree1_1_1 {
   width: 80px;
-  grid-area: tree1_1;
+  grid-area: tree1_1_1;
+}
+
+.tree1_1_2 {
+  width: 80px;
+  grid-area: tree1_1_2;
+}
+
+.tree1_1_3 {
+  width: 80px;
+  grid-area: tree1_1_3;
+}
+
+.tree1_1_4 {
+  width: 80px;
+  grid-area: tree1_1_4;
+}
+
+.tree1_1_5 {
+  width: 80px;
+  grid-area: tree1_1_5;
+}
+
+.tree1_1_6 {
+  width: 80px;
+  grid-area: tree1_1_6;
+}
+
+.tree1_1_7 {
+  width: 80px;
+  grid-area: tree1_1_7;
+}
+
+.tree1_1_8 {
+  width: 80px;
+  grid-area: tree1_1_8;
 }
 
 .tree1 {
@@ -138,61 +168,36 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, minmax(80px, auto));
-  gap: 12px;
-  padding: 24px;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(13, minmax(60, auto));
+  gap: 8px;
+  padding: 16px;
   justify-items: center;
   align-items: center;
   grid-template-areas:
-    "bars bars basketball basketball bench1 bench2"
-    "bike_lanes bridge bushes bushes fountain gazebo"
-    "horse merry_go_round playhouse sandbox seesaw slide"
-    "teeter_toter tree1_1 tree1 tree2 tree3_1 tree3"
-    "tree4 tree5 . . . .";
+    ". . . . . . . . . . . . . . . . . ."
+    ". . . . . . . . . . tree1_1_5 . . . . . . ."
+    ". . . . . . . . . . . . . . . . . ."
+    ". . . . . tree1_1_3 . . . . . . tree1_1_6 . . . . ."
+    ". . . . . . . . . . . . . . . . . ."
+    ". . . . . . . horse . . teeter_toter . . . tree1_1_7 . . ."
+    ". . . . . . . . . . . . . . . . . ."
+    ". . . tree1_1_2 . . . . . . . . . . . . tree1_1_8 ."
+    ". . . . . . . . . . . . . . . . . ."
+    ". . . . . . bars . . fountain . . . . slide . . ."
+    ". tree1_1_1 . . . . . . . . . . sandbox . . . . ."
+    ". . . . . . . . . . . . . . . . . ."
+    ". . . . . . . basketball . . . . . . . . . ."
+    ;
 }
 
-/* Responsive for tablets */
-@media (max-width: 900px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(10, minmax(80px, auto));
-    grid-template-areas:
-      "bars bars basketball"
-      "bench1 bench2 bike_lanes"
-      "bridge bushes bushes"
-      "fountain gazebo horse"
-      "merry_go_round playhouse sandbox"
-      "seesaw slide teeter_toter"
-      "tree1_1 tree1 tree2"
-      "tree3_1 tree3 tree4"
-      "tree5 . ."
-      ". . .";
-  }
+@keyframes hop {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-40px) ; }
+  100% { transform: translateY(0); }
 }
 
-/* Responsive for mobile */
-@media (max-width: 600px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(15, minmax(80px, auto));
-    padding: 8px;
-    gap: 8px;
-    grid-template-areas:
-      "bars bars"
-      "basketball basketball"
-      "bench1 bench2"
-      "bike_lanes bridge"
-      "bushes bushes"
-      "fountain gazebo"
-      "horse merry_go_round"
-      "playhouse sandbox"
-      "seesaw slide"
-      "teeter_toter tree1_1"
-      "tree1 tree2"
-      "tree3_1 tree3"
-      "tree4 tree5"
-      ". ."
-      ". .";
-  }
+.play-structure-img:hover {
+  animation: hop 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+  z-index: 2;
 }
